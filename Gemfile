@@ -50,5 +50,8 @@ end
 group :test do
 	gem "factory_girl_rails"
 	gem "ffaker"
+	gem 'guard'
+	gem 'guard-rspec'
+	gem 'terminal-notifier-guard'
 end
 
