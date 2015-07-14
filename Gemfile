@@ -33,6 +33,13 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'active_model_serializers'
 gem 'devise'
 
+# Gems required for sabisu_rails gem
+gem 'sabisu_rails', github: "IcaliaLabs/sabisu-rails"
+gem 'compass-rails', github: "Compass/compass-rails", branch: "master"
+gem 'furatto'
+gem 'font-awesome-rails'
+gem 'simple_form'
+
 group :development, :test do
 	gem 'sqlite3'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
