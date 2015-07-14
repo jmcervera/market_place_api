@@ -50,6 +50,7 @@ end
 group :test do
 	gem "factory_girl_rails"
 	gem "ffaker"
+	gem "shoulda-matchers"
 	gem 'guard'
 	gem 'guard-rspec'
 	gem 'terminal-notifier-guard'
