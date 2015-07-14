@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
 		scope module: :v1,
           constraints: ApiConstraints.new(version: 1, default: true) do
+      # Our list of resources
+      resources :users, only: [:show]
 
 		end
 
