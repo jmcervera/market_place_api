@@ -7,7 +7,7 @@ RSpec.describe API::V1::SessionsController, type: :controller do
 	  	@user = FactoryGirl.create(:user)
 	  end
 
-context "when the credentials are correct" do
+		context "when the credentials are correct" do
 
       before(:each) do
         credentials = { email: @user.email, password: "12345678" }
@@ -37,4 +37,15 @@ context "when the credentials are correct" do
     end
 	end
 
+  describe "DELETE #destroy" do
+
+    before(:each) do
+      @user = FactoryGirl.create :user
+      sign_in @user#, store: false
+      delete :destroy, id: @user.auth_token
+    end
+
+    it { should respond_with 204 }
+
+  end
 end
