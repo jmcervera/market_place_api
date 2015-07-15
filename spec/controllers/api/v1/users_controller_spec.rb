@@ -1,10 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe API::V1::UsersController, type: :controller do
-  before(:each) do
-  	request.headers['Accept'] = "application/vnd.marketplace.v1, #{Mime::JSON}"
-  	request.headers['Content-Type'] = Mime::JSON.to_s
-  end
 
   describe "GET #show" do
     before(:each) do
