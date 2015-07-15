@@ -18,4 +18,41 @@ describe Authenticable, type: :controller do
       expect(authentication.current_user.auth_token).to eql @user.auth_token
     end
   end
+
+  # describe "#authenticate_with_token!" do
+  #   before do
+  #     @user = FactoryGirl.create :user
+  #     allow(authentication).to receive(:current_user).and_return(nil)
+  #     allow(response).to receive(:response_code).and_return(401)
+  #     allow(response).to receive(:body).and_return({"errors": "Not authenticated"}.to_json)
+  #     allow(authentication).to receive(:response).and_return(response)
+  #   end
+
+  #   it "render a json error message" do
+  #   	authentication.authenticate_with_token!
+  #     expect(json_response[:errors]).to eql "Not authenticated"
+  #   end
+
+  #   it { is_expected.to respond_with 401 }
+  # end
+
+  # Solución encontrada en https://github.com/kurenn/market_place_api/issues/5
+  # No parece demasiado bueno
+  describe '#authenticate_with_token' do
+    before do
+      allow(authentication).to receive(:current_user).and_return(nil)
+      allow(authentication).to receive(:render) do |args|
+        args
+      end
+    end
+
+    it 'returns error' do
+      expect(authentication.authenticate_with_token![:json][:errors]).to eq 'Not authenticated'
+    end
+
+    it 'returns unauthorized status' do
+      expect(authentication.authenticate_with_token![:status]).to eq :unauthorized
+    end
+  end
+
 end
