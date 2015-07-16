@@ -52,11 +52,11 @@ group :development, :test do
   gem 'spring'
 
   gem 'rspec-rails'
+	gem "factory_girl_rails"
+	gem "ffaker"
 end
 
 group :test do
-	gem "factory_girl_rails"
-	gem "ffaker"
 	gem "shoulda-matchers"
 	gem 'guard'
 	gem 'guard-rspec'
