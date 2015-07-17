@@ -14,6 +14,11 @@ RSpec.describe API::V1::UsersController, type: :controller do
     end
 
     it { should respond_with 200 }
+
+    it "has the product ids as embedded" do
+    	user_response = json_response[:user]
+      expect(user_response[:product_ids]).to eql []
+    end
   end
 
   describe "POST #create" do

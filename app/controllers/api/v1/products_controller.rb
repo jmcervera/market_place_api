@@ -4,7 +4,12 @@ class API::V1::ProductsController < ApplicationController
 	respond_to :json
 
 	def index
-		respond_with Product.all
+		if params[:product_ids].present?
+			products = Product.find(params[:product_ids])
+		else
+			products = Product.all
+		end
+		respond_with products
 	end
 
 	def show
