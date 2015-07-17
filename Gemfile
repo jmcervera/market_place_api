@@ -30,7 +30,13 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'active_model_serializers'
+# gem 'active_model_serializers'
+# gem 'active_model_serializers',
+# 	git: 'git@github.com:rails-api/active_model_serializers.git'
+
+gem 'active_model_serializers', git: 'git@github.com:rails-api/active_model_serializers.git',
+branch: '0-8-stable'
+
 gem 'devise'
 
 # Gems required for sabisu_rails gem
