@@ -64,6 +64,7 @@ end
 
 group :test do
 	gem "shoulda-matchers"
+	gem "email_spec"
 	gem 'guard'
 	gem 'guard-rspec'
 	gem 'terminal-notifier-guard'
