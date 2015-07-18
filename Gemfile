@@ -38,6 +38,7 @@ gem 'active_model_serializers', git: 'git@github.com:rails-api/active_model_seri
 branch: '0-8-stable'
 
 gem 'devise'
+gem 'kaminari'
 
 # Gems required for sabisu_rails gem
 gem 'sabisu_rails', github: "IcaliaLabs/sabisu-rails"
