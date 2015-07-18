@@ -7,6 +7,8 @@ class Order < ActiveRecord::Base
 
   validates :user_id, presence: true
 
+  validates_with EnoughProductsValidator
+
   has_many :placements
   has_many :products, through: :placements
 
