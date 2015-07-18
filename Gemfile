@@ -39,6 +39,7 @@ branch: '0-8-stable'
 
 gem 'devise'
 gem 'kaminari'
+gem 'delayed_job_active_record'
 
 # Gems required for sabisu_rails gem
 gem 'sabisu_rails', github: "IcaliaLabs/sabisu-rails"
